@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTALPLAY CLAY | Carômetro dos Alunos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <div>
+          <span class="badge">PORTALPLAY CLAY</span>
+          <h1>Carômetro dos Alunos</h1>
+        </div>
+
+        <div class="role-switcher" aria-label="Seleção de perfil">
+          <button class="role-btn active" data-role="Professor" type="button">Professor</button>
+          <button class="role-btn" data-role="Equipe" type="button">Equipe</button>
+          <button class="role-btn" data-role="Visitante" type="button">Visitante</button>
+        </div>
+      </header>
+
+      <section class="status-box" id="accessStatus" hidden>
+        <h2>Acesso restrito</h2>
+        <p>Esta plataforma é exclusiva para professores e equipe autorizada da PORTALPLAY CLAY.</p>
+      </section>
+
+      <section class="panel" id="formPanel">
+        <div class="section-title">
+          <h2 id="formTitle">Cadastrar aluno</h2>
+        </div>
+
+        <form id="studentForm" class="student-form">
+          <label>
+            <span>Foto</span>
+            <input id="foto" type="url" placeholder="https://..." />
+          </label>
+
+          <label>
+            <span>Nome completo</span>
+            <input id="nome" type="text" placeholder="Ex: Ana Silva" required />
+          </label>
+
+          <label>
+            <span>Idade</span>
+            <input id="idade" type="number" min="1" max="99" placeholder="18" required />
+          </label>
+
+          <label>
+            <span>Turma</span>
+            <input id="turma" type="text" placeholder="Ex: CT2" required />
+          </label>
+
+          <label>
+            <span>Ano/Semestre de entrada</span>
+            <input id="anoSemestre" type="text" placeholder="Ex: 2026.2" required />
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn" id="submitBtn">Cadastrar aluno</button>
+            <button type="button" class="secondary-btn hidden" id="cancelEditBtn">Cancelar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="cards-grid" id="studentList"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
